@@ -23,4 +23,16 @@ add_executable(kernel.elf
 
 add_custom_command(TARGET kernel.elf POST_BUILD
 	COMMAND ${tools}/bin/i686-elf-objcopy -O binary kernel.elf kernel.bin
-	WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+	WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+	COMMENT "Creating elf executable !")
+
+
+add_custom_command(TARGET kernel.elf POST_BUILD
+		COMMAND cp -f kernel.elf ${CMAKE_SOURCE_DIR}/iso/boot/kernel
+		WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+		COMMENT "Copying kernel file...")
+
+add_custom_command(TARGET kernel.elf POST_BUILD
+		COMMAND grub-mkrescue -o IncendieOS.iso iso
+		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+		COMMENT "Creating bootable iso with grub")

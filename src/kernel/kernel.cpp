@@ -33,10 +33,9 @@ MultibootHeader multiboot __attribute__((aligned(4))) __attribute__((section(".m
 
 uint8_t stack_bytes[16 * 1024] __attribute__((aligned(16))) __attribute__((section(".bss")));
 
-extern "C" {
-void kernel_main() {
+void kernel_main();
 
-}
+extern "C" {
 
 void _start() {
 	asm volatile (
@@ -51,4 +50,7 @@ void _start() {
 		[kmain] "r" (kernel_main)
 	);
 }
+}
+void kernel_main() {
+
 }
