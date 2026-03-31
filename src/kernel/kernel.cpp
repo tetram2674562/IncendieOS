@@ -5,9 +5,8 @@
 #error "You are not using a cross-compiler, you will most certainly run into trouble"
 #endif
 
-/* This tutorial will only work for the 32-bit ix86 targets. */
 #if !defined(__i386__)
-#error "This tutorial needs to be compiled with a ix86-elf compiler"
+#error "You need a ix86 cross compiler to compile this kernel"
 #endif
 
 /* Multiboot header constant :D */
