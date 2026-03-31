@@ -1,0 +1,7 @@
+build/
+toolchain/
+.idea/
+.vscode/
+
+iso/boot/kernel
+IncendieOS.iso

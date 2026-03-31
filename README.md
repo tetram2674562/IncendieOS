@@ -20,3 +20,6 @@ I wish to support the same specificaions than XP, allowing me to run IncendieOS 
 
 As it is a personnal project, I'm not open to contribution. However you can feel free to fork it as long as you mention me ❤️ !
 
+## About AI 
+
+All the code written here is handwritten by myself, there are no AI code. 
