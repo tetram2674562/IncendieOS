@@ -15,7 +15,7 @@ I realised I didn't had enough knowledge in low-level programming, so I challeng
 
 ## Target Hardware
 
-I wish to support the same specificaions than XP, allowing me to run IncendieOS on very old hardware.
+I wish to support the same specificaions than XP, allowing me to run ArcticFox OS on very old hardware.
 
 ## Contributing
 
