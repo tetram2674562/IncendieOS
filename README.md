@@ -1,4 +1,4 @@
-# Incendie OS
+# ArcticFox OS
 
 A hobby x86 operating system.
 
@@ -7,6 +7,7 @@ A hobby x86 operating system.
 - Provide the ability to listen to music
 - Play 3D video games !
 - Watch youtube 
+- Use the cool Arctic Fox web browser !
 
 ## Why ?
 
