@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(IncendieOS LANGUAGES CXX C ASM)
-set(CMAKE_CXX_STANDARD 98)
+project(ArcticFoxOS LANGUAGES CXX C ASM)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(tools ${CMAKE_SOURCE_DIR}/toolchain)
@@ -23,6 +23,9 @@ file(GLOB_RECURSE SOURCES
 		${CMAKE_SOURCE_DIR}/src/**)
 
 add_executable(kernel.elf ${SOURCES})
+target_include_directories(kernel.elf PRIVATE include)
+target_link_directories(kernel.elf PRIVATE include)
+
 
 add_custom_command(TARGET kernel.elf POST_BUILD
 	COMMAND ${tools}/bin/i686-elf-objcopy -O binary kernel.elf kernel.bin
@@ -36,6 +39,6 @@ add_custom_command(TARGET kernel.elf POST_BUILD
 		COMMENT "Copying kernel file...")
 
 add_custom_command(TARGET kernel.elf POST_BUILD
-		COMMAND grub-mkrescue -o IncendieOS.iso iso
+		COMMAND grub-mkrescue -o ArcticFoxOS.iso iso
 		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 		COMMENT "Creating bootable iso with grub")

@@ -1,6 +1,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+
+#include "kernel/drivers/vga/VgaTextMode.h"
 #if defined(__linux__)
 #error "You are not using a cross-compiler, you will most certainly run into trouble"
 #endif
@@ -23,7 +25,7 @@ typedef struct __attribute__((packed)) {
 	uint32_t padding;
 } MultibootHeader;
 
-MultibootHeader multiboot __attribute__((aligned(4))) __attribute__((section(".multiboot"))){
+MultibootHeader multiboot __attribute__((aligned(4))) __attribute__((section(".multiboot"))) {
 	.magic = MB_HEADER_MAGIC,
 	.flags = FLAGS,
 	.checksum = (uint32_t) -(MB_HEADER_MAGIC + FLAGS),
@@ -51,5 +53,8 @@ void _start() {
 }
 }
 void kernel_main() {
-
+	kernel::driver::vga::VgaTextMode textMode;
+	textMode.writeString("Test text >:D from VGA TEXT DRIVER !!!", 38);
+	textMode.setBackground(kernel::driver::vga::VgaTextMode::VGA_COLOR_BLUE);
+	textMode.writeString("\nTest text >:D from VGA TEXT DRIVER !!!", 39);
 }
