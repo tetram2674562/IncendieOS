@@ -57,4 +57,7 @@ void kernel_main() {
 	textMode.writeString("Test text >:D from VGA TEXT DRIVER !!!", 38);
 	textMode.setBackground(kernel::driver::vga::VgaTextMode::VGA_COLOR_BLUE);
 	textMode.writeString("\nTest text >:D from VGA TEXT DRIVER !!!", 39);
+
+
+	textMode.writeChar('p',10,8);
 }

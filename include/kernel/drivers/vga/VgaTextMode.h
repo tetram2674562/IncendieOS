@@ -6,8 +6,7 @@
 namespace kernel {
     namespace driver {
         namespace vga {
-            class VgaTextMode {
-                // TODO USE TEMPLATE CUZ VIRTUAL DOES NOT EXIST
+            class VgaTextMode: public VgaDriver<VgaTextMode> {
             public:
                 enum VgaColor {
                     VGA_COLOR_BLACK = 0,
@@ -45,9 +44,6 @@ namespace kernel {
                 uint8_t terminalColor;
                 VgaColor foreground;
                 VgaColor background;
-                uint16_t* addr;
-                const uint16_t width;
-                const uint16_t height;
             };
         }
     }

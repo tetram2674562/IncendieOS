@@ -4,7 +4,10 @@
 using namespace kernel::driver::vga;
 
 
-VgaTextMode::VgaTextMode(const uint16_t width, const uint16_t height) : row(0) ,column(0),terminalColor(0), foreground(VGA_COLOR_LIGHT_GREY), background(VGA_COLOR_BLACK), addr((uint16_t*)0xB8000), width(width), height(height) {
+VgaTextMode::VgaTextMode(const uint16_t width, const uint16_t height) : VgaDriver(0xB8000,width,height,TEXT), row(0), column(0),
+                                                                        terminalColor(0),
+                                                                        foreground(VGA_COLOR_LIGHT_GREY),
+                                                                        background(VGA_COLOR_BLACK) {
     recalculateColor();
 }
 
