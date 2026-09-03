@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ArcticFoxOS LANGUAGES CXX C ASM)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -17,6 +16,8 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMPILE_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS} -fno-exceptions -fno-rtti")
 set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -ffreestanding -O2 -nostdlib -T${CMAKE_SOURCE_DIR}/kernel.ld")
+
+project(ArcticFoxOS LANGUAGES CXX C ASM)
 
 file(GLOB_RECURSE SOURCES
 		LIST_DIRECTORIES true
