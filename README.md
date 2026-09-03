@@ -9,6 +9,36 @@ A hobby x86 operating system.
 - Watch youtube 
 - Use the cool Arctic Fox web browser !
 
+## Compiling
+
+The resulting ISO file will be located in the root directory of the git repository as `ArcticFox_OS.iso`
+
+You must have docker and most probably qemu-system-i386 (or qemu for i386 systems).
+
+Just use the build.sh script !
+
+```
+./build.sh
+```
+
+You can also do it the old fashioned way using the `install.sh` that will compile the toolchain for you operating system
+And then use cmake to build it
+
+Like this: 
+```
+mkdir build && cd build
+```
+
+```
+cmake .. && make
+```
+
+## Running the iso 
+
+You can either use virtualbox or qemu
+
+(For qemu you can do the following : `qemu-system-i386 ArcticFoxOS.iso`)
+
 ## Why ?
 
 I realised I didn't had enough knowledge in low-level programming, so I challenged myself to this _little_ project to improve myself.
