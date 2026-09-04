@@ -13,7 +13,7 @@ A hobby x86 operating system.
 
 The resulting ISO file will be located in the root directory of the git repository as `ArcticFox_OS.iso`
 
-You must have docker and most probably qemu-system-i386 (or qemu for i386 systems).
+You must have docker in order for the build script to work.
 
 Just use the build.sh script !
 
@@ -33,7 +33,7 @@ mkdir build && cd build
 cmake .. && make
 ```
 
-## Running the iso 
+## Running the OS 
 
 You can either use virtualbox or qemu
 
