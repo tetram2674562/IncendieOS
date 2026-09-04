@@ -3,7 +3,14 @@ cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
+
 set(tools ${CMAKE_SOURCE_DIR}/toolchain)
+if(NOT EXISTS "${tools}")
+set(tools /toolchain)
+endif ()
+
+
 
 set(CMAKE_C_COMPILER ${tools}/bin/i686-elf-gcc)
 set(CMAKE_CXX_COMPILER ${tools}/bin/i686-elf-g++)
